@@ -97,47 +97,6 @@ class Ticket(object):
         print('----------------------------------------------------------------------------------------------------------------------------------------------------------')
         print('查询到{}趟列车'.format(nu))
 
-        # pprint(info)
-        # print(len(travel))
-        # print(travel[0])
-        # print(travel[1])
-        # pprint(travel)
-        # self.checkLogin()
-        # self.buyTicket()
-
-    def buyTicket(self):
-        data = {
-            '_json_att': '',
-            'REPEAT_SUBMIT_TOKEN': '7e6fb0579409f0d09cdff5552652db27'
-        }
-        headers = {
-            'Connection': 'keep-alive',
-            'Host': 'kyfw.12306.cn',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Origin': 'https://kyfw.12306.cn',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.76',
-            'Referer': 'https://kyfw.12306.cn/otn/confirmPassenger/initDc',
-            'Cookie': '_uab_collina=161858309659026961823942; JSESSIONID=BC27660494BF0E4B03224EEAE095ABA2; tk=a7sk6Zoi_crYpOAeMt9RE2fHFPPp_YUkJsEguKzhS98j-0dtqrJ1J0; RAIL_EXPIRATION=1618754109893; RAIL_DEVICEID=OGkyA3C7P75lIY83O6RitBP7zfKLGhAk3z8JqXPWJ7nEGNifu9htdPZEMrPW5r3iyXueDCpbIYnkfCDZgBWaRXhQ1AwNZjRMUIsUusZ6ka2OJTmfk2Ulv2toyeTjnj04OGPrqXHeNt5Yz-T-LUnXPUkslkwUBujh; BIGipServerpool_passport=165937674.50215.0000; route=9036359bb8a8a461c164a04f8f50b252; current_captcha_type=Z; _jc_save_fromDate=2021-04-30; _jc_save_toDate=2021-04-16; _jc_save_wfdc_flag=dc; _jc_save_fromStation=%u6D1B%u9633%u9F99%u95E8%2CLLF; _jc_save_toStation=%u90D1%u5DDE%u4E1C%2CZAF; BIGipServerotn=1206911498.38945.0000; uKey=c994898578bf9b899fd0c56cd67bdc1e3f99a38b5937b8f8c5623ae0eea0e842'
-        }
-        response2 = requests.post(url=self.url2, headers=headers, data=data)
-        # pprint(response2.json())
-
-    def checkLogin(self):
-        data = {
-            '_json_att': ''
-            # 'REPEAT_SUBMIT_TOKEN': 'b4145e90767b7371d7055f7fb498b228'
-        }
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.76',
-            'Connection': 'keep-alive',
-            'Referer': 'https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc'
-        }
-        response3 = requests.post(url=self.url3, data=data, headers=headers, cookies=response1.cookies)
-        # print(response3.json())
-
 
 if __name__ == '__main__':
     print('==============================')
